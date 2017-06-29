@@ -15,7 +15,7 @@ data=df.iloc[:,2:10].values  #取第3-10列
 
 
 #获取训练集
-def get_train_data(batch_size=60,time_step=20,train_begin=0,train_end=2100):
+def get_train_data(batch_size=60,time_step=20,train_begin=0,train_end=2420):
     batch_index=[]
     data_train=data[train_begin:train_end]
     normalized_train_data=(data_train-np.mean(data_train,axis=0))/np.std(data_train,axis=0)  #标准化
@@ -33,7 +33,7 @@ def get_train_data(batch_size=60,time_step=20,train_begin=0,train_end=2100):
 
 
 #获取测试集
-def get_test_data(time_step=20,test_begin=2100):
+def get_test_data(time_step=20,test_begin=2420):
     data_test=data[test_begin:]
     mean=np.mean(data_test,axis=0)
     std=np.std(data_test,axis=0)
